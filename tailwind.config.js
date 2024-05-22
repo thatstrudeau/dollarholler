@@ -24,6 +24,11 @@ export default {
 				gallery: '#efeaf2',
 				caribbeanGreen: '#00ca9e',
 				fog: '#decaec'
+			},
+			zIndex: {
+				navBarToggle: 91,
+				navBar: 90,
+
 			}
 		}
 	},

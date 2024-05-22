@@ -1,9 +1,33 @@
 <script lang="ts">
     import { page } from '$app/stores'
+	import Close from './icon/Close.svelte';
+	import Hamburger from './icon/Hamburger.svelte';
+
+    let isNavShowing = false;
 </script>
 
-<header class="col-span-3 bg-daisyBush text-center">
-    <div>
+<svlete:head>
+    {#if isNavShowing}
+        <style lang="postcss">
+            body {
+                @apply overflow-hidden md:overflow-auto;
+            }
+        </style>
+    {/if}
+</svlete:head>
+
+<!--Mobile Nav Control -->
+
+<button class="fixed right-6 top-6 z-navBarToggle md:hidden" class:text-goldenFizz = {isNavShowing} class:text-daisyBusy={!isNavShowing} on:click={() => {isNavShowing = !isNavShowing}}>
+    {#if isNavShowing}
+    <Close width={32} height={32} />
+    {:else}
+    <Hamburger width={32} height={32} />
+    {/if}
+</button>
+
+<header class="fixed z-navBar transition-transform h-screen md:h-full w-full md:relative md:col-span-3 bg-daisyBush -translate-x-full md:translate-x-0 text-center" class:translate-x-0={isNavShowing}>
+    <div class="mt-10 mb-10 md:mb-24">
         <a href="/invoices"><img src="/images/logo.svg" alt="The Dollar Holler" class="mx-auto"></a>
     </div>
 
