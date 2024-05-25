@@ -7,7 +7,7 @@
 </script>
 
 
-<svlete:head>
+<svlete:head class="absolute">
     {#if isNavShowing}
         <style lang="postcss">
             body {
