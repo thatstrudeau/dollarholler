@@ -1,12 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores'
-	import Close from './icon/Close.svelte';
-	import Hamburger from './icon/Hamburger.svelte';
+	import Close from '$lib/components/icon/Close.svelte';
+	import Hamburger from '$lib/components/icon/Hamburger.svelte';
 
     let isNavShowing = false;
 </script>
-
-<svlete:head>
+<!-- <svlete:head>
     {#if isNavShowing}
         <style lang="postcss">
             body {
@@ -14,9 +13,9 @@
             }
         </style>
     {/if}
-</svlete:head>
+</svlete:head> -->
 
-<!--Mobile Nav Control -->
+
 
 <button class="fixed right-6 top-6 z-navBarToggle md:hidden" class:text-goldenFizz = {isNavShowing} class:text-daisyBusy={!isNavShowing} on:click={() => {isNavShowing = !isNavShowing}}>
     {#if isNavShowing}
@@ -24,7 +23,7 @@
     {:else}
     <Hamburger width={32} height={32} />
     {/if}
-</button>
+</button> 
 
 <header class="fixed z-navBar transition-transform h-screen md:h-full w-full md:relative md:col-span-3 bg-daisyBush -translate-x-full md:translate-x-0 text-center" class:translate-x-0={isNavShowing}>
     <div class="mt-10 mb-10 md:mb-24">
