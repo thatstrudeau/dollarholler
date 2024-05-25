@@ -5,7 +5,9 @@
 
     let isNavShowing = false;
 </script>
-<!-- <svlete:head>
+
+
+<svlete:head>
     {#if isNavShowing}
         <style lang="postcss">
             body {
@@ -13,11 +15,14 @@
             }
         </style>
     {/if}
-</svlete:head> -->
+</svlete:head>
 
 
 
-<button class="fixed right-6 top-6 z-navBarToggle md:hidden" class:text-goldenFizz = {isNavShowing} class:text-daisyBusy={!isNavShowing} on:click={() => {isNavShowing = !isNavShowing}}>
+<button class="fixed right-6 top-6 z-navBarToggle md:hidden" 
+    class:text-goldenFizz = {isNavShowing} 
+    class:text-daisyBusy={!isNavShowing} 
+    on:click={() => {isNavShowing = !isNavShowing}}>
     {#if isNavShowing}
     <Close width={32} height={32} />
     {:else}
@@ -25,7 +30,8 @@
     {/if}
 </button> 
 
-<header class="fixed z-navBar transition-transform h-screen md:h-full w-full md:relative md:col-span-3 bg-daisyBush -translate-x-full md:translate-x-0 text-center" class:translate-x-0={isNavShowing}>
+<header class="fixed z-navBar transition-transform h-screen md:h-full w-full md:relative md:col-span-3 bg-daisyBush -translate-x-full md:translate-x-0 text-center" 
+    class:translate-x-0={isNavShowing}>
     <div class="mt-10 mb-10 md:mb-24">
         <a href="/invoices"><img src="/images/logo.svg" alt="The Dollar Holler" class="mx-auto"></a>
     </div>
@@ -34,8 +40,8 @@
         <ul class="list-none text-2xl font-bold">
             <li><a href="/invoices" class:active={$page.url.pathname === '/invoices'}>Invoices</a></li>
             <li><a href="/clients" class:active={$page.url.pathname === '/clients'}>Clients</a></li>
-            <li><a href="#" >Settings</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/settings" >Settings</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </nav>
 </header>
