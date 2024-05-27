@@ -16,7 +16,7 @@
 
 @layer components {
     .invoice-table {
-        @apply  grid grid-cols-invoiceTable gap-4 px-6 mb-3 w-full
+        @apply  grid grid-cols-invoiceTableMobile lg:grid-cols-invoiceTable gap-x-4 px-6 mb-3 w-full
     }
 }
 @layer utilities {
@@ -24,3 +24,5 @@
         @apply flex items-center justify-center
     }
 }
+
+/*  */
